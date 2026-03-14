@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nupur Associates – Builders & Property Sale/Purchase in West Delhi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0d0d0d;
+color:#eaeaea;
+font-family:'Poppins',sans-serif;
+}
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+}
+
+section{
+padding:90px 8%;
+}
+
+.gold{
+background:linear-gradient(90deg,#C6A75E,#D4AF37,#B8962E);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav h2{
+font-size:18px;
+}
+
+nav a{
+color:#eaeaea;
+text-decoration:none;
+margin-left:18px;
+font-size:14px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#C6A75E;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url('https://images.jdmagicbox.com/v2/comp/delhi/g9/011pxx11.xx11.200122115459.v5g9/catalogue/nupur-associates-uttam-nagar-west-delhi-estate-agents-wonf1mhcu8.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.hero h1{
+font-size:52px;
+line-height:1.2;
+}
+
+.hero p{
+margin:15px 0;
+color:#ccc;
+}
+
+.btn{
+padding:12px 28px;
+border:1px solid #C6A75E;
+color:#C6A75E;
+text-decoration:none;
+display:inline-block;
+margin-top:15px;
+transition:0.3s;
+border-radius:6px;
+}
+
+.btn:hover{
+background:#C6A75E;
+color:#000;
+box-shadow:0 0 20px rgba(198,167,94,0.6);
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#121212;
+padding:30px;
+border:1px solid #222;
+transition:0.3s;
+border-radius:12px;
+}
+
+.card:hover{
+border:1px solid #C6A75E;
+transform:translateY(-8px);
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:14px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.04);
+}
+
+/* FACEBOOK */
+
+.fb-wrapper{
+margin-top:50px;
+display:flex;
+justify-content:center;
+}
+
+.fb-box{
+background:#fff;
+padding:18px;
+border-radius:16px;
+width:100%;
+max-width:500px;
+box-shadow:0 15px 50px rgba(0,0,0,0.4);
+}
+
+/* TESTIMONIALS */
+
+.testimonial{
+margin-bottom:25px;
+font-style:italic;
+font-size:15px;
+}
+
+.testimonial span{
+display:block;
+margin-top:6px;
+font-style:normal;
+color:#C6A75E;
+font-weight:500;
+}
+
+/* CONTACT */
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:14px;
+margin-bottom:18px;
+background:#121212;
+border:1px solid #333;
+color:#fff;
+border-radius:6px;
+}
+
+.contact button{
+width:100%;
+padding:14px;
+background:#C6A75E;
+border:none;
+color:#000;
+cursor:pointer;
+font-weight:600;
+border-radius:6px;
+transition:0.3s;
+}
+
+.contact button:hover{
+opacity:0.9;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+background:#111;
+color:#aaa;
+font-size:14px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 20px;
+border-radius:50px;
+text-decoration:none;
+font-size:14px;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+.hero h1{
+font-size:32px;
+}
+nav{
+flex-direction:column;
+gap:10px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2 class="gold">Nupur Associates</h2>
+<div>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#updates">Updates</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+<h1 class="gold">Best Property Dealer In West Delhi</h1>
+<p>Builders • Sale/Purchase • Property Consultants</p>
+<p><a href="tel:8447275505" style="color:#C6A75E;text-decoration:none;">📞 8447275505</a></p>
+<p style="color:#C6A75E;">⭐ Trusted by 100+ Happy Clients in West Delhi</p>
+<a href="#contact" class="btn">Book Consultation</a>
+</section>
+
+<section id="services">
+<h2 class="gold">Our Services</h2>
+<div class="services">
+<div class="card">
+<h3>Builders</h3>
+<p>Premium residential construction with high-end finishing.</p>
+</div>
+<div class="card">
+<h3>Sale/Purchase</h3>
+<p>Buy or Sell Properties at best prices.</p>
+</div>
+<div class="card">
+<h3>Property Consultant</h3>
+<p>Reliable property consultation across Delhi.</p>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<h2 class="gold">Our Office</h2>
+<div class="gallery">
+<img src="https://content.jdmagicbox.com/v2/comp/delhi/g9/011pxx11.xx11.200122115459.v5g9/catalogue/nupur-associates-uttam-nagar-west-delhi-estate-agents-19aazu1iw1.jpg?imwidth=800" loading="lazy">
+<img src="https://content.jdmagicbox.com/v2/comp/delhi/x7/011pxx11.xx11.210425225456.g5x7/catalogue/nupur-associates-uttam-nagar-delhi-builders-and-developers-2hksef3ny1.jpg?imwidth=800" loading="lazy">
+<img src="https://content.jdmagicbox.com/v2/comp/delhi/g9/011pxx11.xx11.200122115459.v5g9/catalogue/nupur-associates-uttam-nagar-west-delhi-estate-agents-g1tptw6nke.jpg?imwidth=800" loading="lazy">
+</div>
+</section>
+
+<section id="updates">
+<h2 class="gold">Follow Our Latest Listings</h2>
+<div class="fb-wrapper">
+<div class="fb-box">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
+<div class="fb-page"
+data-href="https://www.facebook.com/nupurassociates/"
+data-tabs="timeline"
+data-width="500"
+data-height="600"
+data-adapt-container-width="true"
+data-hide-cover="false"
+data-show-facepile="false">
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="gold">Client Testimonials</h2>
+<div class="testimonial">
+“Smooth and transparent process from start to finish.”
+<span>- Rohit Malhotra</span>
+</div>
+<div class="testimonial">
+“Reliable team with honest guidance and excellent property options.”
+<span>- Ankit Verma</span>
+</div>
+<div class="testimonial">
+“Impressive construction quality with modern interiors and fine finishing.”
+<span>- Neha Sharma</span>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2 class="gold">Contact Us</h2>
+<p><a href="tel:8447275505" style="color:#C6A75E;text-decoration:none;">📞 8447275505</a></p>
+<br>
+
+<form onsubmit="sendToWhatsApp(event)">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="text" id="phone" placeholder="Your Mobile Number" required>
+<textarea rows="4" id="requirement" placeholder="Your Requirement" required></textarea>
+<button type="submit">Submit Enquiry</button>
+</form>
+
+<br><br>
+
+<div style="width:100%;height:350px;">
+<iframe width="100%" height="100%" style="border:0;border-radius:12px;"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.2766220684193!2d77.05499577600136!3d28.621470384582075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0512a931341f%3A0xbcb1d7f89c100086!2sNupur%20Associates!5e0!3m2!1sen!2sin">
+</iframe>
+</div>
+</section>
+
+<footer>
+© 2026 Nupur Associates | Delhi, India
+</footer>
+
+<a href="https://wa.me/8447275505" class="whatsapp">Chat on WhatsApp</a>
+
+<script>
+function sendToWhatsApp(e){
+e.preventDefault();
+const name=document.getElementById("name").value.trim();
+const phone=document.getElementById("phone").value.trim();
+const requirement=document.getElementById("requirement").value.trim();
+const message=`Hello Nupur Associates,
+
+Name: ${name}
+Mobile: ${phone}
+Requirement: ${requirement}`;
+const encodedMessage=encodeURIComponent(message);
+window.location.href=`https://wa.me/8447275505?text=${encodedMessage}`;
+}
+</script>
+
+</body>
+</html>
