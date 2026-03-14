@@ -3,380 +3,600 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nupur Associates – Builders & Property Sale/Purchase in West Delhi</title>
+<title>NUPUR ASSOCIATES | Premium Builders</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{
-background:#0d0d0d;
-color:#eaeaea;
-font-family:'Poppins',sans-serif;
+background:#0a0a0a;
+color:#fff;
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
 }
 
-h1,h2,h3{
-font-family:'Playfair Display',serif;
-}
-
-section{
-padding:90px 8%;
-}
-
-.gold{
-background:linear-gradient(90deg,#C6A75E,#D4AF37,#B8962E);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-/* NAV */
-
-nav{
+/* Background texture */
+body::before{
+content:"";
 position:fixed;
-width:100%;
-padding:18px 8%;
+width:100%;height:100%;
+background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+opacity:.04;
+z-index:-1;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+position:fixed;
+top:0;width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.65);
-backdrop-filter:blur(10px);
+padding:18px 60px;
 z-index:1000;
+transition:.4s;
 }
 
-nav h2{
-font-size:18px;
+.navbar.scrolled{
+background:rgba(0,0,0,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(177,18,38,.2);
 }
 
-nav a{
-color:#eaeaea;
-text-decoration:none;
-margin-left:18px;
-font-size:14px;
-transition:0.3s;
+.logo-wrapper{
+background:#fff;
+padding:8px;
+border-radius:50%;
+box-shadow:0 6px 20px rgba(0,0,0,.6);
 }
 
-nav a:hover{
-color:#C6A75E;
+.logo-wrapper img{
+height:50px;width:50px;border-radius:50%;
 }
 
-/* HERO */
-
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-url('https://images.jdmagicbox.com/v2/comp/delhi/g9/011pxx11.xx11.200122115459.v5g9/catalogue/nupur-associates-uttam-nagar-west-delhi-estate-agents-wonf1mhcu8.jpg');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+.nav-links{
 display:flex;
-flex-direction:column;
-justify-content:center;
 }
 
-.hero h1{
-font-size:52px;
-line-height:1.2;
-}
-
-.hero p{
-margin:15px 0;
-color:#ccc;
-}
-
-.btn{
-padding:12px 28px;
-border:1px solid #C6A75E;
-color:#C6A75E;
+.nav-links a{
+color:#fff;
 text-decoration:none;
+margin-left:35px;
+font-size:13px;
+letter-spacing:2px;
+position:relative;
+}
+
+.nav-links a::after{
+content:"";
+position:absolute;
+bottom:-6px;left:0;
+width:0;height:1px;
+background:#b11226;
+transition:.3s;
+}
+
+.nav-links a:hover::after{width:100%;}
+
+/* Hamburger */
+.hamburger{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
+}
+
+.hamburger span{
+width:25px;
+height:2px;
+background:#fff;
+transition:.3s;
+}
+
+/* Mobile Menu */
+.mobile-menu{
+position:fixed;
+top:0;left:0;
+width:100%;
+background:#0a0a0a;
+padding:100px 30px 40px;
+transform:translateY(-100%);
+transition:.4s;
+z-index:999;
+}
+
+.mobile-menu a{
+display:block;
+color:#fff;
+text-decoration:none;
+margin-bottom:25px;
+letter-spacing:2px;
+font-size:14px;
+}
+
+.mobile-menu.active{
+transform:translateY(0);
+}
+
+/* ================= HERO ================= */
+
+.hero{height:100vh;position:relative;overflow:hidden;}
+
+.hero video{
+position:absolute;
+top:50%;left:50%;
+min-width:100%;min-height:100%;
+transform:translate(-50%,-50%) scale(1.1);
+object-fit:cover;
+animation:zoom 25s infinite alternate;
+}
+
+@keyframes zoom{
+from{transform:translate(-50%,-50%) scale(1.1);}
+to{transform:translate(-50%,-50%) scale(1.18);}
+}
+
+.hero::after{
+content:"";
+position:absolute;width:100%;height:100%;
+background:linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,.95));
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content h1{
+font-family:'Playfair Display',serif;
+font-size:clamp(38px,7vw,80px);
+letter-spacing:3px;
+}
+
+.hero-content p{
+margin-top:18px;
+color:#b11226;
+letter-spacing:2px;
+}
+
+.cta{
 display:inline-block;
-margin-top:15px;
-transition:0.3s;
-border-radius:6px;
+margin-top:35px;
+padding:14px 36px;
+border:1px solid #b11226;
+color:#b11226;
+text-decoration:none;
+letter-spacing:2px;
+transition:.3s;
 }
 
-.btn:hover{
-background:#C6A75E;
-color:#000;
-box-shadow:0 0 20px rgba(198,167,94,0.6);
+.cta:hover{
+background:#b11226;
+color:#fff;
 }
 
-/* SERVICES */
+/* Section Title */
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:36px;
+letter-spacing:2px;
+text-align:center;
+}
+
+.divider{
+width:70px;height:2px;
+background:#b11226;
+margin:20px auto 60px;
+}
+
+/* ================= SERVICES ================= */
 
 .services{
+padding:110px 0;
+text-align:center;
+}
+
+.services-grid{
+width:90%;
+max-width:1100px;
+margin:auto;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
-margin-top:40px;
 }
 
-.card{
-background:#121212;
-padding:30px;
-border:1px solid #222;
-transition:0.3s;
-border-radius:12px;
+.service-card{
+position:relative;
+padding:50px 30px;
+border:1px solid rgba(177,18,38,.25);
+background:rgba(255,255,255,.03);
+backdrop-filter:blur(10px);
+opacity:0;
+transform:translateY(40px);
+transition:.5s;
 }
 
-.card:hover{
-border:1px solid #C6A75E;
+.service-card.reveal{
+opacity:1;
+transform:translateY(0);
+}
+
+.service-card:hover{
+background:rgba(177,18,38,.08);
 transform:translateY(-8px);
 }
 
-/* GALLERY */
+.service-number{
+position:absolute;
+top:-20px;left:25px;
+font-size:60px;
+font-family:'Playfair Display',serif;
+color:rgba(177,18,38,.08);
+}
 
-.gallery{
+.service-card h3{
+color:#b11226;
+margin-bottom:15px;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects{
+padding:110px 0;
+background:#0d0d0d;
+}
+
+.projects-container{
+width:90%;
+max-width:1100px;
+margin:auto;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 }
 
-.gallery img{
-width:100%;
-height:280px;
-object-fit:cover;
-border-radius:14px;
-transition:0.4s;
+.projects-left p{
+color:#ccc;
+margin-bottom:25px;
+line-height:1.6;
 }
 
-.gallery img:hover{
-transform:scale(1.04);
+.fb-btn{
+display:inline-block;
+padding:12px 25px;
+border:1px solid #b11226;
+color:#b11226;
+text-decoration:none;
+letter-spacing:2px;
+transition:.3s;
 }
 
-/* FACEBOOK */
+.fb-btn:hover{
+background:#b11226;
+color:#fff;
+}
 
 .fb-wrapper{
-margin-top:50px;
-display:flex;
-justify-content:center;
+background:rgba(255,255,255,.03);
+padding:15px;
+border:1px solid rgba(177,18,38,.25);
+border-radius:14px;
 }
 
-.fb-box{
-background:#fff;
-padding:18px;
-border-radius:16px;
-width:100%;
-max-width:500px;
-box-shadow:0 15px 50px rgba(0,0,0,0.4);
-}
+/* ================= CONTACT ================= */
 
-/* TESTIMONIALS */
-
-.testimonial{
-margin-bottom:25px;
-font-style:italic;
-font-size:15px;
-}
-
-.testimonial span{
-display:block;
-margin-top:6px;
-font-style:normal;
-color:#C6A75E;
-font-weight:500;
-}
-
-/* CONTACT */
-
-.contact input,
-.contact textarea{
-width:100%;
-padding:14px;
-margin-bottom:18px;
-background:#121212;
-border:1px solid #333;
-color:#fff;
-border-radius:6px;
-}
-
-.contact button{
-width:100%;
-padding:14px;
-background:#C6A75E;
-border:none;
-color:#000;
-cursor:pointer;
-font-weight:600;
-border-radius:6px;
-transition:0.3s;
-}
-
-.contact button:hover{
-opacity:0.9;
-}
-
-/* FOOTER */
-
-footer{
+.contact{
+padding:110px 0;
 text-align:center;
-padding:25px;
-background:#111;
-color:#aaa;
-font-size:14px;
 }
 
-/* WHATSAPP */
+.contact-form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
 
-.whatsapp{
+.contact-form input,
+.contact-form textarea{
+padding:16px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(177,18,38,.3);
+color:#fff;
+font-size:14px;
+outline:none;
+}
+
+.contact-form textarea{
+min-height:130px;
+resize:none;
+}
+
+.submit-btn{
+padding:15px;
+background:#b11226;
+border:none;
+color:#fff;
+letter-spacing:2px;
+cursor:pointer;
+}
+
+.success-message{
+display:none;
+margin-top:12px;
+color:#4caf50;
+}
+
+/* ================= LOCATION ================= */
+
+.location{
+padding:110px 0 80px;
+background:#0d0d0d;
+}
+
+.location-grid{
+width:90%;
+max-width:1100px;
+margin:40px auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.map-container{
+border-radius:14px;
+overflow:hidden;
+border:1px solid rgba(177,18,38,.3);
+}
+
+.map-container iframe{
+width:100%;
+height:380px;
+border:0;
+filter:grayscale(100%) invert(90%) contrast(90%);
+}
+
+.address-card{
+background:rgba(255,255,255,.03);
+padding:30px;
+border:1px solid rgba(177,18,38,.25);
+}
+
+.address-card h3{
+color:#b11226;
+margin-bottom:15px;
+font-family:'Playfair Display',serif;
+}
+
+.directions-btn{
+display:inline-block;
+margin-top:18px;
+padding:10px 24px;
+border:1px solid #b11226;
+color:#b11226;
+text-decoration:none;
+transition:.3s;
+}
+
+.directions-btn:hover{
+background:#b11226;
+color:#fff;
+}
+
+.footer{
+text-align:center;
+margin-top:60px;
+font-size:13px;
+color:#aaa;
+}
+
+/* Floating WhatsApp */
+.whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
-padding:14px 20px;
-border-radius:50px;
+width:50px;height:50px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:22px;
 text-decoration:none;
-font-size:14px;
-box-shadow:0 5px 20px rgba(0,0,0,0.4);
+z-index:999;
 }
 
-/* MOBILE */
+/* ================= RESPONSIVE ================= */
 
-@media(max-width:768px){
-.hero h1{
-font-size:32px;
-}
-nav{
-flex-direction:column;
-gap:10px;
-}
+@media(max-width:900px){
+
+.navbar{padding:18px 25px;}
+
+.nav-links{display:none;}
+
+.hamburger{display:flex;}
+
+.projects-container,
+.location-grid{
+grid-template-columns:1fr;
 }
 
+.fb-page{
+height:500px!important;
+}
+
+}
 </style>
 </head>
 
 <body>
 
-<nav>
-<h2 class="gold">Nupur Associates</h2>
-<div>
-<a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
-<a href="#updates">Updates</a>
-<a href="#contact">Contact</a>
+<div class="navbar" id="navbar">
+<div class="logo-wrapper">
+<img src="logo.png" alt="Logo">
 </div>
-</nav>
+
+<div class="nav-links">
+<a href="#services">SERVICES</a>
+<a href="#projects">PROJECTS</a>
+<a href="#contact">CONTACT</a>
+<a href="#location">LOCATE US</a>
+</div>
+
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="#services">SERVICES</a>
+<a href="#projects">PROJECTS</a>
+<a href="#contact">CONTACT</a>
+<a href="#location">LOCATE US</a>
+</div>
 
 <section class="hero">
-<h1 class="gold">Best Property Dealer In West Delhi</h1>
-<p>Builders • Sale/Purchase • Property Consultants</p>
-<p><a href="tel:8447275505" style="color:#C6A75E;text-decoration:none;">📞 8447275505</a></p>
-<p style="color:#C6A75E;">⭐ Trusted by 100+ Happy Clients in West Delhi</p>
-<a href="#contact" class="btn">Book Consultation</a>
-</section>
-
-<section id="services">
-<h2 class="gold">Our Services</h2>
-<div class="services">
-<div class="card">
-<h3>Builders</h3>
-<p>Premium residential construction with high-end finishing.</p>
-</div>
-<div class="card">
-<h3>Sale/Purchase</h3>
-<p>Buy or Sell Properties at best prices.</p>
-</div>
-<div class="card">
-<h3>Property Consultant</h3>
-<p>Reliable property consultation across Delhi.</p>
+<video autoplay muted loop playsinline>
+<source src="video1.mp4" type="video/mp4">
+</video>
+<div class="hero-content">
+<div>
+<h1>NUPUR ASSOCIATES</h1>
+<p>Best Builder & Property Consultant In West Delhi</p>
+<a href="#services" class="cta">Explore</a>
 </div>
 </div>
 </section>
 
-<section id="gallery">
-<h2 class="gold">Our Office</h2>
-<div class="gallery">
-<img src="https://content.jdmagicbox.com/v2/comp/delhi/g9/011pxx11.xx11.200122115459.v5g9/catalogue/nupur-associates-uttam-nagar-west-delhi-estate-agents-19aazu1iw1.jpg?imwidth=800" loading="lazy">
-<img src="https://content.jdmagicbox.com/v2/comp/delhi/x7/011pxx11.xx11.210425225456.g5x7/catalogue/nupur-associates-uttam-nagar-delhi-builders-and-developers-2hksef3ny1.jpg?imwidth=800" loading="lazy">
-<img src="https://content.jdmagicbox.com/v2/comp/delhi/g9/011pxx11.xx11.200122115459.v5g9/catalogue/nupur-associates-uttam-nagar-west-delhi-estate-agents-g1tptw6nke.jpg?imwidth=800" loading="lazy">
+<section id="services" class="services">
+<h2 class="section-title">Our Services</h2>
+<div class="divider"></div>
+<div class="services-grid">
+<div class="service-card"><div class="service-number">01</div><h3>Premium Construction</h3><p>Luxury residential construction with superior finishing.</p></div>
+<div class="service-card"><div class="service-number">02</div><h3>Sale & Purchase</h3><p>Buy or sell premium properties seamlessly.</p></div>
+<div class="service-card"><div class="service-number">03</div><h3>Property Consultation</h3><p>Professional real estate advisory services.</p></div>
 </div>
 </section>
 
-<section id="updates">
-<h2 class="gold">Follow Our Latest Listings</h2>
+<section id="projects" class="projects">
+<h2 class="section-title">Latest Projects</h2>
+<div class="divider"></div>
+<div class="projects-container">
+<div class="projects-left">
+<p>Explore our latest construction progress and completed luxury properties across West Delhi.</p>
+<a href="https://www.facebook.com/nupurassociates/" target="_blank" class="fb-btn">
+View All Projects on Facebook
+</a>
+</div>
 <div class="fb-wrapper">
-<div class="fb-box">
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
 <div class="fb-page"
 data-href="https://www.facebook.com/nupurassociates/"
 data-tabs="timeline"
 data-width="500"
-data-height="600"
+data-height="650"
+data-small-header="true"
 data-adapt-container-width="true"
-data-hide-cover="false"
-data-show-facepile="false">
+data-hide-cover="true"
+data-show-facepile="false"></div>
 </div>
-</div>
-</div>
-</section>
-
-<section>
-<h2 class="gold">Client Testimonials</h2>
-<div class="testimonial">
-“Smooth and transparent process from start to finish.”
-<span>- Rohit Malhotra</span>
-</div>
-<div class="testimonial">
-“Reliable team with honest guidance and excellent property options.”
-<span>- Ankit Verma</span>
-</div>
-<div class="testimonial">
-“Impressive construction quality with modern interiors and fine finishing.”
-<span>- Neha Sharma</span>
 </div>
 </section>
 
 <section id="contact" class="contact">
-<h2 class="gold">Contact Us</h2>
-<p><a href="tel:8447275505" style="color:#C6A75E;text-decoration:none;">📞 8447275505</a></p>
-<br>
-
-<form onsubmit="sendToWhatsApp(event)">
+<h2 class="section-title">Contact Us</h2>
+<div class="divider"></div>
+<form id="whatsappForm" class="contact-form">
 <input type="text" id="name" placeholder="Your Name" required>
-<input type="text" id="phone" placeholder="Your Mobile Number" required>
-<textarea rows="4" id="requirement" placeholder="Your Requirement" required></textarea>
-<button type="submit">Submit Enquiry</button>
+<input type="tel" id="mobile" placeholder="Your Mobile Number" required>
+<textarea id="requirement" placeholder="Your Requirement" required></textarea>
+<button type="submit" class="submit-btn">Submit Enquiry</button>
+<div class="success-message" id="successMsg">Redirecting to WhatsApp...</div>
 </form>
+</section>
 
-<br><br>
-
-<div style="width:100%;height:350px;">
-<iframe width="100%" height="100%" style="border:0;border-radius:12px;"
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.2766220684193!2d77.05499577600136!3d28.621470384582075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0512a931341f%3A0xbcb1d7f89c100086!2sNupur%20Associates!5e0!3m2!1sen!2sin">
-</iframe>
+<section id="location" class="location">
+<h2 class="section-title">Locate Us</h2>
+<div class="divider"></div>
+<div class="location-grid">
+<div class="map-container">
+<iframe src="https://www.google.com/maps?q=Nupur+Associates+Uttam+Nagar+Delhi&output=embed"></iframe>
+</div>
+<div class="address-card">
+<h3>Nupur Associates</h3>
+<p>
+Shop no. 2, Mudgal Complex,<br>
+Near Metro Pillar No. 680,<br>
+Prem Nagar, Block E, Param Puri,<br>
+Uttam Nagar, Delhi - 110059
+</p>
+<a href="https://www.google.com/maps?q=Nupur+Associates+Uttam+Nagar+Delhi" target="_blank" class="directions-btn">
+Get Directions
+</a>
+</div>
+</div>
+<div class="footer">
+© 2026 Nupur Associates | Delhi, India
 </div>
 </section>
 
-<footer>
-© 2026 Nupur Associates | Delhi, India
-</footer>
+<a href="https://wa.me/918447275505" class="whatsapp-float" target="_blank">💬</a>
 
-<a href="https://wa.me/8447275505" class="whatsapp">Chat on WhatsApp</a>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
 
 <script>
-function sendToWhatsApp(e){
-e.preventDefault();
-const name=document.getElementById("name").value.trim();
-const phone=document.getElementById("phone").value.trim();
-const requirement=document.getElementById("requirement").value.trim();
-const message=`Hello Nupur Associates,
+/* Reveal Animation */
+const cards=document.querySelectorAll('.service-card');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('reveal');}
+});
+},{threshold:.2});
+cards.forEach(card=>observer.observe(card));
 
-Name: ${name}
-Mobile: ${phone}
-Requirement: ${requirement}`;
-const encodedMessage=encodeURIComponent(message);
-window.location.href=`https://wa.me/8447275505?text=${encodedMessage}`;
-}
+/* Navbar Scroll */
+const navbar=document.getElementById("navbar");
+window.addEventListener("scroll",()=>{
+window.scrollY>80?navbar.classList.add("scrolled"):
+navbar.classList.remove("scrolled");
+});
+
+/* WhatsApp Form */
+document.getElementById("whatsappForm").addEventListener("submit",function(e){
+e.preventDefault();
+const name=document.getElementById("name").value;
+const mobile=document.getElementById("mobile").value;
+const requirement=document.getElementById("requirement").value;
+const message=`Hello Nupur Associates,%0A%0AName: ${name}%0AMobile: ${mobile}%0ARequirement: ${requirement}`;
+document.getElementById("successMsg").style.display="block";
+setTimeout(()=>{
+window.open(`https://wa.me/918447275505?text=${message}`,"_blank");
+},1000);
+});
+
+/* Mobile Menu */
+const hamburger=document.getElementById("hamburger");
+const mobileMenu=document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click",()=>{
+mobileMenu.classList.toggle("active");
+});
 </script>
 
 </body>
